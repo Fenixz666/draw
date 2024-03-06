@@ -1,4 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Jim+Nightshade&display=swap');
+:root{
+    --color-nome: #9C644A;
+    --color-apelido: #644646;
+    --font-titulo: "Inria Serif", serif;
+    --font-subtitulo: "Inria Serif", serif;
+
+}
+
+
+
 header::before{
     content: "";
     background-image: url("../images/011422_Fiddlesticks_Splash_v1.jpg");
@@ -14,12 +24,37 @@ header::before{
 h1 {
     font-family: "Inria Serif", serif;
     color: #9C644A;
-    font-size: 56px;
+    font-size: 50px;
     font-weight:700;
 }
 h2 {
     font-family: "Inria Serif", serif;
     color: #644646;
-    font-size: 25px;
+    font-size: 50px;
     font-weight:600;
+}
+
+h4 {
+    color: #ad3c3c;
+    /* font-family: Alegreya
+    font-size: 50px;
+    font-weight:600; */
+    padding:
+}
+
+#apresentacao{
+    display: flex;
+    
+}
+#apresentacao img{
+    border-radius: 50%;
+    height: 5%;
+    width: 5%;
+
+}
+
+#texto-apresentacao{
+    color: var(--color-nome)
+
+
 }
