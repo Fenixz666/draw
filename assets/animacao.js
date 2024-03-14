@@ -1,5 +1,3 @@
-<script>
-function changeBackground(image) {
-    document.body.style.backgroundImage = 'url(' + image.src + ')';
-}
-</script>
+window.sr = ScrollReveal ({reset: true});
+
+sr.reveal('h1', {duration= 1000})

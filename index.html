@@ -1,10 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://unpkg.com/scrollreveal"></script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="assets\css\style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .tooltip {
+            display: flex;
+            position: absolute;
+            background-color: black;
+            color: white;
+            border-radius: 5px;
+            padding: 10px;
+            z-index: 200;
+            margin-top: 5px;
+            max-width: 350px; 
+            max-height: 100px; 
+            text-align: center;
+            display: flex;
+            align-items: center; 
+            animation: slideInOut 0.5s ease-in-out forwards; 
+        }
+
+        @keyframes slideInOut {
+            0% {
+                opacity: 0;
+                transform: translateX(-20px); 
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0); 
+            }
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 <body>
     <img src="https://static.wikia.nocookie.net/leagueoflegends/images/2/28/Mage_icon.png" alt="mago icone" class="Mage_icon">
@@ -24,18 +64,34 @@
     </section>
     <section id="Fiddle_Abilities">
         <div>
-            <img src="https://static.wikia.nocookie.net/leagueoflegends/images/c/c6/Fiddlesticks_A_Harmless_Scarecrow.png" alt="Fiddle_P">
-            <span class="ability-tooltip">Um Espantalho Inofensivo</span>
-            <img src="https://static.wikia.nocookie.net/leagueoflegends/images/9/92/Fiddlesticks_Terrify.png" alt="Fiddle Q">
-            <span class="ability-tooltip">Aterrorizar</span>
-            <img src="https://static.wikia.nocookie.net/leagueoflegends/images/3/36/Fiddlesticks_Bountiful_Harvest.png" alt="Fiddle_W">
-            <span class="ability-tooltip">Colheita Farta</span>
-            <img src="https://static.wikia.nocookie.net/leagueoflegends/images/0/02/Fiddlesticks_Reap.png" alt="Fiddle_E">
-            <span class="ability-tooltip">Ceifar</span>
-            <img src="https://static.wikia.nocookie.net/leagueoflegends/images/c/c4/Fiddlesticks_Crowstorm.png" alt="Fiddle_R">
-            <span class="ability-tooltip">Tempestade de Corvos</span>
+            <img src="https://static.wikia.nocookie.net/leagueoflegends/images/c/c6/Fiddlesticks_A_Harmless_Scarecrow.png" alt="O amuleto de Fiddlesticks é substituído por efígies do espantalho." onmouseover="showTooltip(this.alt, this)" onmouseout="hideTooltip()">
+            <img src="https://static.wikia.nocookie.net/leagueoflegends/images/9/92/Fiddlesticks_Terrify.png" alt="Ao causar dano a inimigos com habilidades enquanto não estiver sendo visto ou alvejar um inimigo com Aterrorizar, Fiddlesticks inflige medo em uma unidade-alvo inimiga, fazendo com que fuja aterrorizada por um curto período." onmouseover="showTooltip(this.alt, this)" onmouseout="hideTooltip()">
+            <img src="https://static.wikia.nocookie.net/leagueoflegends/images/3/36/Fiddlesticks_Bountiful_Harvest.png" alt="Fiddlesticks drena a Vida dos inimigos próximos, causando dano de execução adicional no fim da duração." onmouseover="showTooltip(this.alt, this)" onmouseout="hideTooltip()">
+            <img src="https://static.wikia.nocookie.net/leagueoflegends/images/0/02/Fiddlesticks_Reap.png" alt="Fiddlesticks ceifa uma área com sua foice, reduzindo a velocidade de movimento de todos os inimigos atingidos e silenciando os atingidos no centro do corte." onmouseover="showTooltip(this.alt, this)" onmouseout="hideTooltip()">
+            <img src="https://static.wikia.nocookie.net/leagueoflegends/images/c/c4/Fiddlesticks_Crowstorm.png" alt="Uma revoada de corvos assassinos voa em volta de Fiddlesticks, causando dano por segundo a todas as unidades inimigas próximas." onmouseover="showTooltip(this.alt, this)" onmouseout="hideTooltip()">
         </div>
     </section>
-    
+
+    <div id="tooltip" class="tooltip"></div>
+
+    <script>
+        function showTooltip(text, element) {
+            var tooltip = document.getElementById('tooltip');
+            tooltip.innerHTML = text;
+            tooltip.style.display = 'block';           
+            tooltip.style.top = (element.offsetTop - 10) + 'px';
+            tooltip.style.left = (element.offsetLeft + element.offsetWidth + 20) + 'px';
+        }
+     
+        function hideTooltip() {
+            var tooltip = document.getElementById('tooltip');
+            tooltip.style.animation = 'fadeOut 0.5s ease-in-out forwards'; 
+            setTimeout(function() {
+                tooltip.style.display = 'none';
+                tooltip.style.animation = ''; 
+            }, 0); 
+        }
+    </script>
 </body>
 </html>
+

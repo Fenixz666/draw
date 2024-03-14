@@ -38,7 +38,7 @@ h1 {
     font-weight:700;
     margin-left:5%;
     position: flex;
-    text-shadow: 2px 1px 3px rgba(0, 0, 0, 1);
+    text-shadow: 2px 1px 3px rgb(0, 0, 0);
     margin-top: 1px;
 }
 
@@ -98,12 +98,12 @@ h4 {
 #Fiddle_Abilities img {
     width: 64px;
     height: auto;
-    position: relative; /* Certifique-se de usar 'relative' para usar 'left' */
-    left: 60px; /* Ajusta a posição para a direita */
+    position: relative; 
+    left: 60px; 
     margin-right: 10px;
     margin-bottom: 28px;
     top: -1px;
-    display: flex;
+    display:flex;
 }
 
 #texto-apresentacao{
@@ -112,65 +112,3 @@ h4 {
 
 }
 
-/* Adicione estas linhas ao seu CSS */
-.ability-container {
-    position: relative;
-    display: inline-block;
-}
-
-.ability-tooltip {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-.ability-container:hover .ability-tooltip {
-    display: block;
-}
-/* Adicione este CSS ao seu arquivo style.css */
-
-#Fiddle_Abilities img:hover + .ability-tooltip {
-    display: block;
-}
-
-/* Adicione este CSS ao seu arquivo style.css */
-
-#Fiddle_Abilities img:hover + .ability-tooltip {
-    display: block;
-    opacity: 1;
-    transition: opacity 1.5s ease-in-out;
-}
-
-
-
-
-/* Ajuste a posição do tooltip conforme necessário */
-#Fiddle_Abilities img:nth-of-type(1):hover + .ability-tooltip {
-    top: 146px;
-    left: 150px;
-}
-
-#Fiddle_Abilities img:nth-of-type(2):hover + .ability-tooltip {
-    top: 245px;
-    left: 150px;
-}
-
-#Fiddle_Abilities img:nth-of-type(3):hover + .ability-tooltip {
-    top: 335px;
-    left: 150px;
-}
-
-#Fiddle_Abilities img:nth-of-type(4):hover + .ability-tooltip {
-    top: 430px;
-    left: 150px;
-}
-
-#Fiddle_Abilities img:nth-of-type(5):hover + .ability-tooltip {
-    top: 520px;
-    left: 150px;
-}
